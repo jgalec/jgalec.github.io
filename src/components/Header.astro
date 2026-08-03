@@ -10,6 +10,17 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/experiencia-aplicada">Experiencia aplicada</HeaderLink>
 			<HeaderLink href="/contacto">Contacto</HeaderLink>
 		</div>
+		<div class="social-links">
+			<a href="https://github.com/jgalec" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Juan Galeano">
+				<i class="fa-brands fa-github" aria-hidden="true"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/jgaleanoc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Juan Galeano">
+				<i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+			</a>
+			<a href="mailto:juan@jgalec.dev" aria-label="Enviar correo a Juan Galeano">
+				<i class="fa-solid fa-envelope" aria-hidden="true"></i>
+			</a>
+		</div>
 	</nav>
 </header>
 
@@ -20,6 +31,7 @@ import HeaderLink from './HeaderLink.astro';
 	}
 
 	nav {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -36,5 +48,22 @@ import HeaderLink from './HeaderLink.astro';
 		justify-content: flex-end;
 		gap: 3rem;
 		margin: 0 auto;
+	}
+
+	.social-links {
+		position: absolute;
+		right: 1.5rem;
+		display: flex;
+		gap: 0.75rem;
+	}
+
+	.social-links a {
+		color: var(--ef-muted);
+		font-size: 0.875rem;
+		text-decoration: none;
+	}
+
+	.social-links a:hover {
+		color: var(--ef-green);
 	}
 </style>
