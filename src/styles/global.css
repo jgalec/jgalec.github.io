@@ -1,3 +1,20 @@
+@import "tailwindcss";
+
+@theme inline {
+	--font-mono: "Fira Mono", monospace;
+	--color-ef-bg: var(--ef-bg);
+	--color-ef-bg-dim: var(--ef-bg-dim);
+	--color-ef-bg-card: var(--ef-bg-card);
+	--color-ef-bg-hover: var(--ef-bg-hover);
+	--color-ef-fg: var(--ef-fg);
+	--color-ef-border: var(--ef-border);
+	--color-ef-muted: var(--ef-muted);
+	--color-ef-green: var(--ef-green);
+	--color-ef-blue: var(--ef-blue);
+	--color-ef-red: var(--ef-red);
+	--color-ef-yellow: var(--ef-yellow);
+}
+
 :root,
 :root.light {
 	color-scheme: light;
