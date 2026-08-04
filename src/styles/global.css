@@ -102,7 +102,6 @@ main {
 	width: 100%;
 	max-width: 48rem;
 	margin: 0 auto;
-	padding: 3rem 1.5rem;
 }
 
 h1,
@@ -129,7 +128,6 @@ h3 {
 	font-size: 1.5rem;
 }
 
-p,
 ul,
 ol,
 blockquote,
