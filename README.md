@@ -1,6 +1,6 @@
-# Portafolio de Juan Galeano
+# Portafolio
 
-Sitio personal de Juan Galeano, desarrollador backend especializado en automatización y agentes de IA. Presenta proyectos personales, experiencia profesional y soluciones desarrolladas para clientes de forma anonimizada.
+Mi súper ultra mega cool sitio personal.
 
 ## Stack
 
