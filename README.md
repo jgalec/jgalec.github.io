@@ -1,63 +1,62 @@
-# Astro Starter Kit: Blog
+# Portafolio de Juan Galeano
 
-```sh
-pnpm create astro@latest -- --template blog
-```
+Sitio personal de Juan Galeano, desarrollador backend especializado en automatización y agentes de IA. Presenta proyectos personales, experiencia profesional y soluciones desarrolladas para clientes de forma anonimizada.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-Features:
+- [Astro 7](https://astro.build/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- TypeScript
+- Markdown y colecciones de contenido de Astro
+- GitHub Pages y GitHub Actions
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Rutas
 
-## 🚀 Project Structure
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Presentación y accesos principales. |
+| `/proyectos` | Proyectos personales y experimentales. |
+| `/experiencia` | Trayectoria profesional y soluciones desarrolladas. |
+| `/experiencia/[...slug]` | Detalle de cada caso de estudio. |
+| `/contacto` | Canales de contacto, GitHub y LinkedIn. |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura
 
 ```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+src/
+├── components/       # Componentes compartidos
+├── content/casos/    # Casos de estudio en Markdown
+├── layouts/          # Estructura global del sitio
+├── pages/            # Rutas de Astro
+├── styles/           # Tokens Everforest y estilos globales
+└── content.config.ts # Esquema de la colección de casos
+public/               # Favicons y recursos estáticos
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Cada archivo Markdown en `src/content/casos/` incluye el título, descripción, rol, sector y tecnologías del caso. Los nombres de clientes y sus datos identificables se omiten por confidencialidad.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Desarrollo local
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Requiere Node.js `>=22.12.0` y pnpm.
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+pnpm install
+pnpm dev
+```
 
-## 🧞 Commands
+El sitio estará disponible en `http://localhost:4321`.
 
-All commands are run from the root of the project, from a terminal:
+## Comandos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| Comando | Descripción |
+| --- | --- |
+| `pnpm dev` | Inicia el servidor de desarrollo. |
+| `pnpm build` | Genera la versión estática en `dist/`. |
+| `pnpm preview` | Sirve localmente la versión compilada. |
+| `pnpm astro ...` | Ejecuta comandos de la CLI de Astro. |
 
-## 👀 Want to learn more?
+## Despliegue
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+El workflow [Deploy site to GitHub Pages](.github/workflows/deploy-pages.yml) compila y publica el sitio automáticamente al recibir cambios en la rama `main`.
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Antes de configurar un dominio personalizado, actualiza la propiedad `site` en `astro.config.mjs` para generar URLs canónicas y sitemap correctos.
