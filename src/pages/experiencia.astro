@@ -1,5 +1,13 @@
 ---
+import { getCollection } from "astro:content";
+import CaseCard from "../components/CaseCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+const cases = await getCollection("cases");
+const backendCases = cases.filter((caseStudy) => caseStudy.data.role === "backend");
+const automationCases = cases.filter(
+    (caseStudy) => caseStudy.data.role === "automation",
+);
 ---
 
 <Layout
@@ -55,6 +63,23 @@ import Layout from "../layouts/Layout.astro";
                         a servicios mantenibles, contenedorizados con Docker y
                         desplegados en servidores Linux.
                     </p>
+                    <section class="flex flex-col gap-4">
+                        <h3 class="text-sm font-semibold tracking-wider text-ef-muted uppercase">
+                            Casos de estudio
+                        </h3>
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                            {
+                                backendCases.map((caseStudy) => (
+                                    <CaseCard
+                                        title={caseStudy.data.title}
+                                        description={caseStudy.data.description}
+                                        href={`/experiencia/${caseStudy.id}/`}
+                                        technologies={caseStudy.data.technologies}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </section>
                 </li>
                 <li class="relative flex flex-col gap-4 pl-8">
                     <span
@@ -78,6 +103,23 @@ import Layout from "../layouts/Layout.astro";
                         y servicios externos mediante flujos basados en
                         webhooks.
                     </p>
+                    <section class="flex flex-col gap-4">
+                        <h3 class="text-sm font-semibold tracking-wider text-ef-muted uppercase">
+                            Casos de estudio
+                        </h3>
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                            {
+                                automationCases.map((caseStudy) => (
+                                    <CaseCard
+                                        title={caseStudy.data.title}
+                                        description={caseStudy.data.description}
+                                        href={`/experiencia/${caseStudy.id}/`}
+                                        technologies={caseStudy.data.technologies}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </section>
                 </li>
             </ol>
         </section>

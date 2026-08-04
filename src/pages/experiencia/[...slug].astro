@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const cases = await getCollection('cases');
+
+	return cases.map((caseStudy) => ({
+		params: { slug: caseStudy.id },
+		props: { caseStudy },
+	}));
+}
+
+const { caseStudy } = Astro.props;
+const { Content } = await render(caseStudy);
+---
+
+<Layout title={`${caseStudy.data.title} | Juan Galeano`} description={caseStudy.data.description}>
+	<article class="flex max-w-2xl flex-col gap-10">
+		<header class="flex flex-col gap-4">
+			<p class="text-xs font-medium tracking-[0.04em] text-ef-muted uppercase">{caseStudy.data.sector}</p>
+			<h1 class="text-[clamp(2rem,5vw,3.5rem)]">{caseStudy.data.title}</h1>
+			<p class="text-ef-muted">{caseStudy.data.description}</p>
+			<div class="flex flex-wrap gap-2">
+				{caseStudy.data.technologies.map((technology) => <span class="rounded-full bg-ef-bg-card px-3 py-1 text-sm text-ef-muted">{technology}</span>)}
+			</div>
+		</header>
+		<div class="flex flex-col gap-4 text-ef-muted [&_h2]:mt-6 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-ef-fg [&_h3]:mt-2 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-ef-fg [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6">
+			<Content />
+		</div>
+	</article>
+</Layout>
