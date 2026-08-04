@@ -6,6 +6,120 @@ import Layout from '../layouts/Layout.astro';
 	title="Juan Galeano"
 	description="Desarrollador Backend y de Automatizaciones de Agentes de IA."
 >
-	<h1>Juan Galeano</h1>
-	<p>Desarrollador Backend y de Automatizaciones de Agentes de IA.</p>
+	<section class="hero">
+		<pre class="signature" aria-hidden="true">juan@jgalec:~$</pre>
+		<p class="eyebrow">Backend · Automatización · Agentes de IA</p>
+		<h1>Diseño sistemas que conectan procesos, datos e inteligencia artificial.</h1>
+		<p class="summary">
+			Soy Juan Galeano, desarrollador backend y de automatizaciones con agentes de IA. Construyo servicios,
+			integraciones y flujos mantenibles para resolver procesos operativos reales.
+		</p>
+		<div class="actions">
+			<a class="primary" href="/proyectos">Ver proyectos personales <span aria-hidden="true">→</span></a>
+			<a class="secondary" href="/experiencia-aplicada">Experiencia aplicada <span aria-hidden="true">→</span></a>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		min-height: calc(100vh - 11rem);
+		padding: 4rem 0;
+	}
+
+	.signature {
+		margin: 0 0 1.5rem;
+		color: var(--ef-blue);
+		font-family: inherit;
+		font-size: clamp(1.25rem, 4vw, 2rem);
+		font-weight: 700;
+		line-height: 1;
+		animation: color-cycle 6s steps(1, end) infinite;
+	}
+
+	.eyebrow {
+		margin: 0 0 1rem;
+		color: var(--ef-muted);
+		font-size: 0.75rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		max-width: 22ch;
+		font-size: clamp(2rem, 5vw, 3.5rem);
+	}
+
+	.summary {
+		max-width: 42rem;
+		margin: 1.5rem 0 0;
+		color: var(--ef-muted);
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.actions a {
+		font-size: 0.875rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.actions a span {
+		display: inline-block;
+		transition: transform 150ms ease;
+	}
+
+	.actions a:hover span {
+		transform: translateX(0.25rem);
+	}
+
+	.primary {
+		padding: 0.625rem 0.875rem;
+		border-radius: 0.5rem;
+		background: var(--ef-bg-card);
+		color: var(--ef-fg);
+	}
+
+	.primary:hover {
+		background: var(--ef-bg-hover);
+		color: var(--ef-fg);
+	}
+
+	.secondary {
+		padding: 0.625rem 0.875rem;
+		border: 1px solid var(--ef-border);
+		border-radius: 0.5rem;
+		color: var(--ef-fg);
+	}
+
+	.secondary:hover {
+		border-color: var(--ef-green);
+		color: var(--ef-green);
+	}
+
+	@keyframes color-cycle {
+		0%,
+		100% {
+			color: var(--ef-red);
+		}
+		25% {
+			color: var(--ef-yellow);
+		}
+		50% {
+			color: var(--ef-green);
+		}
+		75% {
+			color: var(--ef-blue);
+		}
+	}
+</style>
