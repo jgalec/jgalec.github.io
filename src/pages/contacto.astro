@@ -1,8 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Contacto | Juan Galeano" description="Información de contacto de Juan Galeano.">
-	<h1>Contacto</h1>
-	<p>La información de contacto estará disponible próximamente.</p>
+<Layout
+    title="Contacto | Juan Galeano"
+    description="Información de contacto de Juan Galeano."
+>
+    <section class="flex max-w-2xl flex-col">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)]">Hablemos</h1>
+        <p class="mt-6 text-ef-muted">
+            ¿Tienes un proyecto de backend, automatización o agentes de IA?
+            Escríbeme y conversemos sobre cómo puedo ayudar.
+        </p>
+        <a
+            class="group mt-8 w-fit rounded-lg bg-ef-bg-card px-3.5 py-2.5 text-sm text-ef-fg no-underline transition-colors hover:bg-ef-bg-hover hover:text-ef-fg"
+            href="mailto:juan@jgalec.dev"
+        >
+            Escríbeme a juan@jgalec.dev{' '}
+            <span
+                class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+                aria-hidden="true"
+            >
+                →</span
+            >
+        </a>
+        <div class="mt-10 flex flex-col gap-4 text-ef-muted">
+            <p>
+                Puedes explorar mi repositorio personal en{' '}
+                <a
+                    class="text-ef-green underline underline-offset-4 transition-colors hover:text-ef-fg"
+                    href="https://github.com/jgalec"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub</a
+                >.
+            </p>
+            <p>
+                También puedes conocer mi trayectoria profesional y conectar
+                conmigo en{' '}
+                <a
+                    class="text-ef-green underline underline-offset-4 transition-colors hover:text-ef-fg"
+                    href="https://www.linkedin.com/in/jgaleanoc/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn</a
+                >.
+            </p>
+        </div>
+    </section>
 </Layout>
