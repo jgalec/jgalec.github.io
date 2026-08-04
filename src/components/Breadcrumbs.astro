@@ -12,10 +12,10 @@ const { items } = Astro.props;
 ---
 
 <nav aria-label="Breadcrumb" class="mb-8">
-	<ol class="flex items-center gap-2 text-sm">
+	<ol class="flex flex-wrap items-center gap-2 text-sm">
 		{
 			items.map((item, index) => (
-				<li class="flex items-center gap-2">
+				<li class:list={['flex min-w-0 items-center gap-2', index === items.length - 1 && 'w-full sm:w-auto']}>
 					{index > 0 && (
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -23,15 +23,15 @@ const { items } = Astro.props;
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							class="size-3 opacity-40"
+							class="size-3 shrink-0 opacity-40"
 						>
 							<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 						</svg>
 					)}
 					{item.href ? (
-						<a href={item.href} class="no-underline opacity-50 transition-opacity hover:opacity-100">{item.label}</a>
+						<a href={item.href} class="shrink-0 no-underline opacity-50 transition-opacity hover:opacity-100">{item.label}</a>
 					) : (
-						<span class="opacity-70">{item.label}</span>
+						<span class="min-w-0 break-words opacity-70">{item.label}</span>
 					)}
 				</li>
 			))
