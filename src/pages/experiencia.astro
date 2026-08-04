@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="Experiencia | Juan Galeano"
+    description="Trayectoria profesional y stack técnico de Juan Galeano."
+>
+    <section class="flex flex-col gap-6">
+        <section class="flex flex-col gap-6">
+            <h1 class="text-2xl">Stack técnico</h1>
+            <ul class="flex flex-wrap gap-2 text-sm text-ef-muted">
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">Node.js</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">TypeScript</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">n8n</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">PostgreSQL</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">MySQL</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">Redis</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">Docker</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">Linux</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">APIs REST</li>
+                <li class="rounded-full bg-ef-bg-card px-3 py-1">Webhooks</li>
+            </ul>
+		</section>
+
+        <section class="flex flex-col gap-8">
+            <header class="flex max-w-2xl flex-col gap-6">
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)]">Experiencia</h1>
+                </div>
+                <p class="text-ef-muted">
+                    Desarrollo servicios backend, integraciones y
+                    automatizaciones para procesos operativos y comerciales.
+                </p>
+            </header>
+
+            <ol class="flex flex-col gap-12 border-l border-ef-border">
+                <li class="relative flex flex-col gap-4 pl-8">
+                    <span
+                        class="absolute -left-1.5 top-1 size-3 rounded-full bg-ef-green"
+                        aria-hidden="true"></span>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-xs text-ef-muted">
+                            Enero de 2026 - Actualidad
+                        </p>
+                        <h2 class="text-xl">Desarrollador Backend</h2>
+                        <p class="text-sm font-medium text-ef-muted">
+                            Cambio Digital
+                        </p>
+                    </div>
+                    <p class="max-w-2xl text-ef-muted">
+                        Desarrollo y mantengo APIs REST, servicios backend e
+                        integraciones con terceros mediante Node.js, TypeScript,
+                        Express, Hono y PostgreSQL. También migro flujos de n8n
+                        a servicios mantenibles, contenedorizados con Docker y
+                        desplegados en servidores Linux.
+                    </p>
+                </li>
+                <li class="relative flex flex-col gap-4 pl-8">
+                    <span
+                        class="absolute -left-1.5 top-1 size-3 rounded-full bg-ef-blue"
+                        aria-hidden="true"></span>
+                    <div class="flex flex-col gap-2">
+                        <p class="text-xs text-ef-muted">
+                            Diciembre de 2024 - Diciembre de 2025
+                        </p>
+                        <h2 class="text-xl">
+                            Desarrollador de Automatizaciones y Agentes de IA
+                        </h2>
+                        <p class="text-sm font-medium text-ef-muted">
+                            Cambio Digital
+                        </p>
+                    </div>
+                    <p class="max-w-2xl text-ef-muted">
+                        Diseñé, desarrollé y mantuve automatizaciones con n8n y
+                        agentes de IA para atención al cliente, ventas y
+                        operaciones. Integré CRM, WhatsApp, APIs, bases de datos
+                        y servicios externos mediante flujos basados en
+                        webhooks.
+                    </p>
+                </li>
+            </ol>
+        </section>
+    </section>
+</Layout>

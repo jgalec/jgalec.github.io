@@ -17,9 +17,9 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
-	<body class="flex min-h-screen flex-col">
+	<body class="flex min-h-screen flex-col bg-ef-bg font-mono text-ef-fg">
 		<Header />
-		<main class="flex-1">
+		<main class="container mx-auto flex max-w-3xl flex-1 flex-col px-6 py-12">
 			<slot />
 		</main>
 		<Footer />
