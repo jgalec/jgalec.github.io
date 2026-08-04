@@ -1,128 +1,154 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import RepoCard from '../components/RepoCard.astro';
+import Layout from "../layouts/Layout.astro";
+import RepoCard from "../components/RepoCard.astro";
 
 const sections = [
-	{
-		title: 'Destacados',
-		projects: [
-			{
-				name: 'quarian-voice-filter',
-				description: 'Motor Rust reutilizable para procesamiento creativo de voz, con CLI y aplicación de escritorio.',
-				htmlUrl: 'https://github.com/commander-spaceman/quarian-voice-filter',
-				language: 'Rust',
-			},
-			{
-				name: 'nara',
-				description: 'Compañero de escritorio con personaje 3D, interacción por voz, memoria local y conversación con IA.',
-				htmlUrl: 'https://github.com/commander-spaceman/nara',
-				language: 'TypeScript',
-			},
-			{
-				name: 'pcc-toolkit',
-				description: 'Toolkit CLI para inspeccionar, extraer, validar y editar diálogos de Mass Effect 2.',
-				htmlUrl: 'https://github.com/commander-spaceman/pcc-toolkit',
-				language: 'Go',
-			},
-		],
-	},
-	{
-		title: 'Más proyectos',
-		projects: [
-			{
-				name: 'firefox-workspaces',
-				description: 'Extensión de Firefox para capturar y restaurar contextos de navegación locales.',
-				htmlUrl: 'https://github.com/jgalec/firefox-workspaces',
-				language: 'JavaScript',
-				stars: 3,
-			},
-			{
-				name: 'mem',
-				description: 'Servidor MCP local para memoria persistente, consultable y trazable en proyectos y agentes de código.',
-				htmlUrl: 'https://github.com/jgalec/mem',
-				language: 'Go',
-			},
-			{
-				name: 'datavisualizr',
-				description: 'Herramienta educativa para visualizar estructuras de datos y algoritmos mediante animaciones guiadas.',
-				htmlUrl: 'https://github.com/jgalec/datavisualizr',
-				badge: 'WIP',
-			},
-			{
-				name: 'xcast',
-				description: 'Cliente de código abierto para Xbox Remote Play con streaming WebRTC y renderizado WebGPU.',
-				htmlUrl: 'https://github.com/xcast-dev/xcast',
-				language: 'TypeScript',
-				badge: 'WIP',
-			},
-		],
-	},
-	{
-		title: 'Proyectos experimentales',
-		projects: [
-			{
-				name: 'simulacra',
-				description: 'Exploración de agentes generativos con memoria, reflexión y planificación para entornos interactivos.',
-				htmlUrl: 'https://github.com/jgalec/simulacra',
-				badge: 'WIP',
-			},
-		],
-	},
-	{
-		title: 'Librerías',
-		projects: [
-			{
-				name: 'me2-trace',
-				description: 'Herramienta de trazado de archivos en tiempo real para depurar la carga de mods de Mass Effect 2.',
-				htmlUrl: 'https://github.com/commander-spaceman/me2-trace',
-				language: 'C',
-			},
-			{
-				name: 'me2tlk',
-				description: 'Biblioteca para leer y resolver archivos TLK de Mass Effect 2 con soporte para DLC.',
-				htmlUrl: 'https://github.com/commander-spaceman/me2tlk',
-				language: 'Go',
-			},
-			{
-				name: 'me2pcc',
-				description: 'Biblioteca para leer y analizar paquetes PCC de Mass Effect 2.',
-				htmlUrl: 'https://github.com/commander-spaceman/me2pcc',
-				language: 'Go',
-			},
-			{
-				name: 'me2lzo',
-				description: 'Implementación Go de compresión y descompresión LZO1X para paquetes PCC de Mass Effect 2.',
-				htmlUrl: 'https://github.com/commander-spaceman/me2lzo',
-				language: 'Go',
-			},
-		],
-	},
-	{
-		title: 'Archivados',
-		projects: [
-			{
-				name: 'lia-vael-beyond-citadel',
-				description: 'Expansión narrativa que ofrece a Lia\'Vael una segunda oportunidad más allá de la Ciudadela.',
-				htmlUrl: 'https://github.com/commander-spaceman/lia-vael-beyond-citadel',
-				language: 'Python',
-				badge: 'archived',
-			},
-		],
-	},
+    {
+        title: "Destacados",
+        projects: [
+            {
+                name: "quarian-voice-filter",
+                description:
+                    "Motor Rust reutilizable para procesamiento creativo de voz, con CLI y aplicación de escritorio.",
+                htmlUrl:
+                    "https://github.com/commander-spaceman/quarian-voice-filter",
+                language: "Rust",
+            },
+            {
+                name: "nara",
+                description:
+                    "Compañero de escritorio con personaje 3D, interacción por voz, memoria local y conversación con IA.",
+                htmlUrl: "https://github.com/commander-spaceman/nara",
+                language: "TypeScript",
+            },
+            {
+                name: "pcc-toolkit",
+                description:
+                    "Toolkit CLI para inspeccionar, extraer, validar y editar diálogos de Mass Effect 2.",
+                htmlUrl: "https://github.com/commander-spaceman/pcc-toolkit",
+                language: "Go",
+            },
+        ],
+    },
+    {
+        title: "Más proyectos",
+        projects: [
+            {
+                name: "firefox-workspaces",
+                description:
+                    "Extensión de Firefox para capturar y restaurar contextos de navegación locales.",
+                htmlUrl: "https://github.com/jgalec/firefox-workspaces",
+                language: "JavaScript",
+                stars: 3,
+            },
+            {
+                name: "mem",
+                description:
+                    "Servidor MCP local para memoria persistente, consultable y trazable en proyectos y agentes de código.",
+                htmlUrl: "https://github.com/jgalec/mem",
+                language: "Go",
+            },
+            {
+                name: "datavisualizr",
+                description:
+                    "Herramienta educativa para visualizar estructuras de datos y algoritmos mediante animaciones guiadas.",
+                htmlUrl: "https://github.com/jgalec/datavisualizr",
+                badge: "WIP",
+            },
+            {
+                name: "xcast",
+                description:
+                    "Cliente de código abierto para Xbox Remote Play con streaming WebRTC y renderizado WebGPU.",
+                htmlUrl: "https://github.com/xcast-dev/xcast",
+                language: "TypeScript",
+                badge: "WIP",
+            },
+        ],
+    },
+    {
+        title: "Proyectos experimentales",
+        projects: [
+            {
+                name: "simulacra",
+                description:
+                    "Exploración de agentes generativos con memoria, reflexión y planificación para entornos interactivos.",
+                htmlUrl: "https://github.com/jgalec/simulacra",
+                badge: "WIP",
+            },
+        ],
+    },
+    {
+        title: "Librerías",
+        projects: [
+            {
+                name: "me2-trace",
+                description:
+                    "Herramienta de trazado de archivos en tiempo real para depurar la carga de mods de Mass Effect 2.",
+                htmlUrl: "https://github.com/commander-spaceman/me2-trace",
+                language: "C",
+            },
+            {
+                name: "me2tlk",
+                description:
+                    "Biblioteca para leer y resolver archivos TLK de Mass Effect 2 con soporte para DLC.",
+                htmlUrl: "https://github.com/commander-spaceman/me2tlk",
+                language: "Go",
+            },
+            {
+                name: "me2pcc",
+                description:
+                    "Biblioteca para leer y analizar paquetes PCC de Mass Effect 2.",
+                htmlUrl: "https://github.com/commander-spaceman/me2pcc",
+                language: "Go",
+            },
+            {
+                name: "me2lzo",
+                description:
+                    "Implementación Go de compresión y descompresión LZO1X para paquetes PCC de Mass Effect 2.",
+                htmlUrl: "https://github.com/commander-spaceman/me2lzo",
+                language: "Go",
+            },
+        ],
+    },
+    {
+        title: "Archivados",
+        projects: [
+            {
+                name: "lia-vael-beyond-citadel",
+                description:
+                    "Expansión narrativa que ofrece a Lia'Vael una segunda oportunidad más allá de la Ciudadela.",
+                htmlUrl:
+                    "https://github.com/commander-spaceman/lia-vael-beyond-citadel",
+                language: "Python",
+                badge: "archived",
+            },
+        ],
+    },
 ];
 ---
 
-<Layout title="Proyectos | Juan Galeano" description="Proyectos personales de Juan Galeano.">
-	<h1 class="mb-8 text-2xl font-bold">Proyectos</h1>
+<Layout
+    title="Proyectos | Juan Galeano"
+    description="Proyectos personales de Juan Galeano."
+>
+    <section class="flex flex-col gap-8">
+        <h1 class="mb-8 text-2xl font-bold">Proyectos</h1>
 
-	<div class="flex flex-col gap-10">
-		{sections.map((section) => (
-			<section>
-				<h2 class="mb-4 text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">{section.title}</h2>
-				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-					{section.projects.map((project) => <RepoCard {...project} />)}
-				</div>
-			</section>
-		))}
-	</div>
+        <div class="flex flex-col gap-8">
+            {
+                sections.map((section) => (
+                    <section>
+                        <h2 class="mb-4 text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">
+                            {section.title}
+                        </h2>
+                        <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                            {section.projects.map((project) => (
+                                <RepoCard {...project} />
+                            ))}
+                        </div>
+                    </section>
+                ))
+            }
+        </div>
+    </section>
 </Layout>
