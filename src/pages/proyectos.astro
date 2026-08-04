@@ -1,11 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RepoCard from '../components/RepoCard.astro';
+
+const featured = [
+	{
+		name: 'mem',
+		description: 'Servidor MCP local para memoria persistente, consultable y trazable en proyectos y agentes de código.',
+		htmlUrl: 'https://github.com/jgalec/mem',
+		language: 'Go',
+	},
+	{
+		name: 'nara',
+		description: 'Compañero de escritorio con personaje 3D, interacción por voz, memoria local y conversación con IA.',
+		htmlUrl: 'https://github.com/commander-spaceman/nara',
+		language: 'TypeScript',
+	},
+	{
+		name: 'pcc-toolkit',
+		description: 'Toolkit CLI para inspeccionar, extraer, validar y editar diálogos de Mass Effect 2.',
+		htmlUrl: 'https://github.com/commander-spaceman/pcc-toolkit',
+		language: 'Go',
+	},
+];
+
+const others = [
+	{
+		name: 'firefox-workspaces',
+		description: 'Extensión de Firefox para capturar y restaurar contextos de navegación locales.',
+		htmlUrl: 'https://github.com/jgalec/firefox-workspaces',
+		language: 'JavaScript',
+		stars: 3,
+	},
+	{
+		name: 'quarian-voice-filter',
+		description: 'Motor Rust reutilizable para procesamiento creativo de voz, con CLI y aplicación de escritorio.',
+		htmlUrl: 'https://github.com/commander-spaceman/quarian-voice-filter',
+		language: 'Rust',
+	},
+];
 ---
 
-<Layout
-	title="Proyectos personales | Juan Galeano"
-	description="Proyectos personales de Juan Galeano."
->
-	<h1>Proyectos personales</h1>
-	<p>Una selección de proyectos personales estará disponible próximamente.</p>
+<Layout title="Proyectos | Juan Galeano" description="Proyectos personales de Juan Galeano.">
+	<h1 class="mb-8 text-2xl font-bold">Proyectos</h1>
+
+	<section>
+		<h2 class="mb-4 text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">Destacados</h2>
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+			{featured.map((project) => <RepoCard {...project} />)}
+		</div>
+	</section>
+
+	<hr class="my-10 border-ef-border" />
+
+	<section>
+		<h2 class="mb-4 text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">Explora más</h2>
+		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+			{others.map((project) => <RepoCard {...project} />)}
+		</div>
+	</section>
 </Layout>
