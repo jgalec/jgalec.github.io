@@ -54,9 +54,9 @@ Plataforma para registrar y operar envíos internacionales con:
 - Backend: Express.
 - Datos: Supabase con PostgreSQL y actualizaciones en tiempo real.
 - Autenticación: sesiones administrativas seguras.
-- CRM: Kommo mediante Kommo Relay.
+- CRM: Kommo mediante una capa intermedia HTTP/JSON entre n8n y la API de Kommo. Gestiona y expone endpoints simplificados para operaciones frecuentes.
 - Logística: CTT y GLS.
-- Servicio auxiliar: GLS Proxy para aislar la comunicación con la integración de GLS.
+- Servicio auxiliar: proxy ligero en Hono que actúa como intermediario entre los flujos de n8n y el servicio web SOAP B2B de GLS Spain, gestionando de forma transparente los requisitos de SSL y Content-Type.
 - Automatización: n8n para recogidas, etiquetas, tracking, notificaciones e incidencias.
 - Despliegue: Railway.
 

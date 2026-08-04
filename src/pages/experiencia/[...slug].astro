@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -16,6 +17,7 @@ const { Content } = await render(caseStudy);
 ---
 
 <Layout title={`${caseStudy.data.title} | Juan Galeano`} description={caseStudy.data.description}>
+	<Breadcrumbs items={[{ label: 'Inicio', href: '/' }, { label: 'Experiencia', href: '/experiencia' }, { label: caseStudy.data.title }]} />
 	<article class="flex max-w-2xl flex-col gap-10">
 		<header class="flex flex-col gap-4">
 			<p class="text-xs font-medium tracking-[0.04em] text-ef-muted uppercase">{caseStudy.data.sector}</p>
