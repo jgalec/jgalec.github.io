@@ -15,6 +15,26 @@
 	--color-ef-yellow: var(--ef-yellow);
 }
 
+@theme {
+	--animate-color-cycle: color-cycle 6s steps(1, end) infinite;
+
+	@keyframes color-cycle {
+		0%,
+		100% {
+			color: var(--ef-red);
+		}
+		25% {
+			color: var(--ef-yellow);
+		}
+		50% {
+			color: var(--ef-green);
+		}
+		75% {
+			color: var(--ef-blue);
+		}
+	}
+}
+
 :root,
 :root.light {
 	color-scheme: light;

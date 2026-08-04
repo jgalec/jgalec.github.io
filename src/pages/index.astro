@@ -2,124 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout
-	title="Juan Galeano"
-	description="Desarrollador Backend y de Automatizaciones de Agentes de IA."
->
-	<section class="hero">
-		<pre class="signature" aria-hidden="true">juan@jgalec:~$</pre>
-		<p class="eyebrow">Backend · Automatización · Agentes de IA</p>
-		<h1>Diseño sistemas que conectan procesos, datos e inteligencia artificial.</h1>
-		<p class="summary">
+<Layout title="Juan Galeano" description="Desarrollador Backend y de Automatizaciones de Agentes de IA.">
+	<section class="flex min-h-[calc(100vh-11rem)] flex-col items-start justify-center px-6 py-16">
+		<pre class="mb-6 animate-color-cycle font-mono text-[clamp(1.25rem,4vw,2rem)] font-bold leading-none motion-reduce:animate-none" aria-hidden="true">juan@jgalec:~$</pre>
+		<p class="mb-4 text-xs font-medium tracking-[0.04em] text-ef-muted uppercase">Backend · Automatización · Agentes de IA</p>
+		<h1 class="max-w-[22ch] text-[clamp(2rem,5vw,3.5rem)]">Diseño sistemas que conectan procesos, datos e inteligencia artificial.</h1>
+		<p class="mt-6 max-w-2xl text-ef-muted">
 			Soy Juan Galeano, desarrollador backend y de automatizaciones con agentes de IA. Construyo servicios,
 			integraciones y flujos mantenibles para resolver procesos operativos reales.
 		</p>
-		<div class="actions">
-			<a class="primary" href="/proyectos">Ver proyectos personales <span aria-hidden="true">→</span></a>
-			<a class="secondary" href="/experiencia-aplicada">Experiencia aplicada <span aria-hidden="true">→</span></a>
+		<div class="mt-8 flex flex-wrap gap-x-6 gap-y-4">
+			<a class="group rounded-lg bg-ef-bg-card px-3.5 py-2.5 text-sm font-bold text-ef-fg no-underline transition-colors hover:bg-ef-bg-hover hover:text-ef-fg" href="/proyectos">
+				Ver proyectos personales <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true">→</span>
+			</a>
+			<a class="group rounded-lg border border-ef-border px-3.5 py-2.5 text-sm font-bold text-ef-fg no-underline transition-colors hover:border-ef-green hover:text-ef-green" href="/experiencia-aplicada">
+				Experiencia aplicada <span class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true">→</span>
+			</a>
 		</div>
 	</section>
 </Layout>
-
-<style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		min-height: calc(100vh - 11rem);
-		padding: 4rem 0;
-	}
-
-	.signature {
-		margin: 0 0 1.5rem;
-		color: var(--ef-blue);
-		font-family: inherit;
-		font-size: clamp(1.25rem, 4vw, 2rem);
-		font-weight: 700;
-		line-height: 1;
-		animation: color-cycle 6s steps(1, end) infinite;
-	}
-
-	.eyebrow {
-		margin: 0 0 1rem;
-		color: var(--ef-muted);
-		font-size: 0.75rem;
-		font-weight: 500;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-	}
-
-	h1 {
-		max-width: 22ch;
-		font-size: clamp(2rem, 5vw, 3.5rem);
-	}
-
-	.summary {
-		max-width: 42rem;
-		margin: 1.5rem 0 0;
-		color: var(--ef-muted);
-	}
-
-	.actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem 1.5rem;
-		margin-top: 2rem;
-	}
-
-	.actions a {
-		font-size: 0.875rem;
-		font-weight: 700;
-		text-decoration: none;
-	}
-
-	.actions a span {
-		display: inline-block;
-		transition: transform 150ms ease;
-	}
-
-	.actions a:hover span {
-		transform: translateX(0.25rem);
-	}
-
-	.primary {
-		padding: 0.625rem 0.875rem;
-		border-radius: 0.5rem;
-		background: var(--ef-bg-card);
-		color: var(--ef-fg);
-	}
-
-	.primary:hover {
-		background: var(--ef-bg-hover);
-		color: var(--ef-fg);
-	}
-
-	.secondary {
-		padding: 0.625rem 0.875rem;
-		border: 1px solid var(--ef-border);
-		border-radius: 0.5rem;
-		color: var(--ef-fg);
-	}
-
-	.secondary:hover {
-		border-color: var(--ef-green);
-		color: var(--ef-green);
-	}
-
-	@keyframes color-cycle {
-		0%,
-		100% {
-			color: var(--ef-red);
-		}
-		25% {
-			color: var(--ef-yellow);
-		}
-		50% {
-			color: var(--ef-green);
-		}
-		75% {
-			color: var(--ef-blue);
-		}
-	}
-</style>
