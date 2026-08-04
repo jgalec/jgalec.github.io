@@ -34,6 +34,7 @@
 
 <script>
 	const toggle = document.querySelector<HTMLButtonElement>('#theme-toggle');
+	const favicon = document.querySelector<HTMLLinkElement>('#favicon');
 
 	function setTheme(theme: 'light' | 'dark') {
 		const root = document.documentElement;
@@ -41,6 +42,7 @@
 
 		root.classList.toggle('dark', isDark);
 		root.classList.toggle('light', !isDark);
+		favicon?.setAttribute('href', isDark ? '/favicon-dark.svg' : '/favicon-light.svg');
 		toggle?.setAttribute('aria-pressed', String(isDark));
 		toggle?.setAttribute('aria-label', isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
 
