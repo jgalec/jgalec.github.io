@@ -104,6 +104,7 @@
 
 html {
     background: var(--ef-bg);
+    scrollbar-gutter: stable;
 }
 
 body {
