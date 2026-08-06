@@ -1,0 +1,112 @@
+---
+import { getCollection } from 'astro:content';
+import CaseCard from '../../components/CaseCard.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const cases = await getCollection('cases', ({ id }) => id.startsWith('en/'));
+const backendCases = cases.filter((caseStudy) => caseStudy.data.role === 'backend');
+const automationCases = cases.filter((caseStudy) => caseStudy.data.role === 'automation');
+---
+
+<Layout
+	title="Experience | Juan Galeano"
+	description="Juan Galeano's professional experience and technical stack."
+>
+	<section class="flex flex-col gap-6">
+		<section class="flex flex-col gap-6">
+			<h1 class="text-2xl">Technical stack</h1>
+			<ul class="flex flex-wrap gap-2 text-sm text-ef-muted">
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">Node.js</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">TypeScript</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">n8n</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">PostgreSQL</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">MySQL</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">Redis</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">Docker</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">Linux</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">REST APIs</li>
+				<li class="rounded-full bg-ef-bg-card px-3 py-1">Webhooks</li>
+			</ul>
+		</section>
+
+		<section class="flex flex-col gap-8">
+			<header class="flex max-w-2xl flex-col gap-6">
+				<div class="flex flex-col gap-4">
+					<h1 class="text-[clamp(2rem,5vw,3.5rem)]">Experience</h1>
+				</div>
+				<p class="text-ef-muted">
+					I develop backend services, integrations, and automations for operational and commercial processes.
+				</p>
+			</header>
+
+			<ol class="flex flex-col gap-12 border-l border-ef-border">
+				<li class="relative flex flex-col gap-4 pl-8">
+					<span
+						class="absolute -left-1.5 top-1 size-3 rounded-full bg-ef-green"
+						aria-hidden="true"></span>
+					<div class="flex flex-col gap-1">
+						<p class="text-xs text-ef-muted">January 2026 - Present</p>
+						<h2 class="text-xl">Backend Developer</h2>
+						<p class="text-sm font-medium text-ef-muted">Cambio Digital</p>
+					</div>
+					<p class="max-w-2xl text-ef-muted">
+						I develop and maintain REST APIs, backend services, and third-party integrations with Node.js, TypeScript, Express, Hono, and PostgreSQL. I also migrate n8n workflows to maintainable services, containerized with Docker and deployed on Linux servers.
+					</p>
+					<section class="flex flex-col gap-4">
+						<h3 class="text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">
+							Selected solutions
+						</h3>
+						<p class="max-w-2xl text-xs text-ef-muted">
+							Each solution belongs to a different client. Names and identifying details have been omitted for confidentiality.
+						</p>
+						<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+							{
+								backendCases.map((caseStudy) => (
+									<CaseCard
+										title={caseStudy.data.title}
+										description={caseStudy.data.description}
+										href={`/en/experience/${caseStudy.id.slice('en/'.length)}/`}
+										technologies={caseStudy.data.technologies}
+									/>
+								))
+							}
+						</div>
+					</section>
+				</li>
+				<li class="relative flex flex-col gap-4 pl-8">
+					<span
+						class="absolute -left-1.5 top-1 size-3 rounded-full bg-ef-blue"
+						aria-hidden="true"></span>
+					<div class="flex flex-col gap-2">
+						<p class="text-xs text-ef-muted">December 2024 - December 2025</p>
+						<h2 class="text-xl">Automation and AI Agent Developer</h2>
+						<p class="text-sm font-medium text-ef-muted">Cambio Digital</p>
+					</div>
+					<p class="max-w-2xl text-ef-muted">
+						I designed, developed, and maintained n8n automations and AI agents for customer service, sales, and operations. I integrated CRMs, WhatsApp, APIs, databases, and external services through webhook-based workflows.
+					</p>
+					<section class="flex flex-col gap-4">
+						<h3 class="text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">
+							Selected solutions
+						</h3>
+						<p class="max-w-2xl text-xs text-ef-muted">
+							Each solution belongs to a different client. Names and identifying details have been omitted for confidentiality.
+						</p>
+						<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+							{
+								automationCases.map((caseStudy) => (
+									<CaseCard
+										title={caseStudy.data.title}
+										description={caseStudy.data.description}
+										href={`/en/experience/${caseStudy.id.slice('en/'.length)}/`}
+										technologies={caseStudy.data.technologies}
+									/>
+								))
+							}
+						</div>
+					</section>
+				</li>
+			</ol>
+		</section>
+	</section>
+</Layout>

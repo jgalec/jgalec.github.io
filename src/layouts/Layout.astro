@@ -13,7 +13,7 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={Astro.currentLocale ?? 'es'}>
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>

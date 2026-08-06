@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Juan Galeano" description="Contact information for Juan Galeano.">
+	<section class="flex max-w-2xl flex-col">
+		<h1 class="text-[clamp(2rem,5vw,3.5rem)]">Let's talk</h1>
+		<p class="mt-6 text-ef-muted">
+			Do you have a backend, automation, or AI agent project? Send me a message and let's discuss how I can help.
+		</p>
+		<a
+			class="group mt-8 inline-flex min-h-11 w-fit items-center rounded-lg bg-ef-bg-card px-3.5 py-2.5 text-sm text-ef-fg no-underline transition-colors hover:bg-ef-bg-hover hover:text-ef-fg"
+			href="mailto:juan@jgalec.dev"
+		>
+			Email me at juan@jgalec.dev{' '}
+			<span
+				class="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+				aria-hidden="true"
+			>
+				→</span
+			>
+		</a>
+		<div class="mt-10 flex flex-col gap-4 text-ef-muted">
+			<p>
+				You can explore my personal repositories on{' '}
+				<a
+					class="text-ef-green underline underline-offset-4 transition-colors hover:text-ef-fg"
+					href="https://github.com/jgalec"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					GitHub</a
+				>.
+			</p>
+			<p>
+				You can also learn about my professional background and connect with me on{' '}
+				<a
+					class="text-ef-green underline underline-offset-4 transition-colors hover:text-ef-fg"
+					href="https://www.linkedin.com/in/jgaleanoc/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					LinkedIn</a
+				>.
+			</p>
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import RepoCard from '../../components/RepoCard.astro';
+
+const sections = [
+	{
+		title: 'Featured',
+		projects: [
+			{
+				name: 'quarian-voice-filter',
+				description: 'Reusable Rust engine for creative voice processing, with a CLI and desktop application.',
+				htmlUrl: 'https://github.com/commander-spaceman/quarian-voice-filter',
+				language: 'Rust',
+			},
+			{
+				name: 'nara',
+				description: 'Desktop companion with a 3D character, voice interaction, local memory, and AI conversation.',
+				htmlUrl: 'https://github.com/commander-spaceman/nara',
+				language: 'TypeScript',
+			},
+			{
+				name: 'pcc-toolkit',
+				description: 'CLI toolkit for inspecting, extracting, validating, and editing Mass Effect 2 dialogue.',
+				htmlUrl: 'https://github.com/commander-spaceman/pcc-toolkit',
+				language: 'Go',
+			},
+		],
+	},
+	{
+		title: 'More projects',
+		projects: [
+			{
+				name: 'firefox-workspaces',
+				description: 'Firefox extension for capturing and restoring local browsing contexts.',
+				htmlUrl: 'https://github.com/jgalec/firefox-workspaces',
+				language: 'JavaScript',
+				stars: 3,
+			},
+			{
+				name: 'mem',
+				description: 'Local MCP server for persistent, queryable, and traceable memory across projects and coding agents.',
+				htmlUrl: 'https://github.com/jgalec/mem',
+				language: 'Go',
+			},
+			{
+				name: 'datavisualizr',
+				description: 'Educational tool for visualizing data structures and algorithms through guided animations.',
+				htmlUrl: 'https://github.com/jgalec/datavisualizr',
+				badge: 'WIP',
+			},
+			{
+				name: 'xcast',
+				description: 'Open-source Xbox Remote Play client with WebRTC streaming and WebGPU rendering.',
+				htmlUrl: 'https://github.com/xcast-dev/xcast',
+				language: 'TypeScript',
+				badge: 'WIP',
+			},
+		],
+	},
+	{
+		title: 'Experimental projects',
+		projects: [
+			{
+				name: 'simulacra',
+				description: 'Exploration of generative agents with memory, reflection, and planning for interactive environments.',
+				htmlUrl: 'https://github.com/jgalec/simulacra',
+				badge: 'WIP',
+			},
+		],
+	},
+	{
+		title: 'Libraries',
+		projects: [
+			{
+				name: 'me2-trace',
+				description: 'Real-time file tracing tool for debugging Mass Effect 2 mod loading.',
+				htmlUrl: 'https://github.com/commander-spaceman/me2-trace',
+				language: 'C',
+			},
+			{
+				name: 'me2tlk',
+				description: 'Library for reading and resolving Mass Effect 2 TLK files, with DLC support.',
+				htmlUrl: 'https://github.com/commander-spaceman/me2tlk',
+				language: 'Go',
+			},
+			{
+				name: 'me2pcc',
+				description: 'Library for reading and parsing Mass Effect 2 PCC packages.',
+				htmlUrl: 'https://github.com/commander-spaceman/me2pcc',
+				language: 'Go',
+			},
+			{
+				name: 'me2lzo',
+				description: 'Go implementation of LZO1X compression and decompression for PCC packages.',
+				htmlUrl: 'https://github.com/commander-spaceman/me2lzo',
+				language: 'Go',
+			},
+		],
+	},
+	{
+		title: 'Archived',
+		projects: [
+			{
+				name: 'lia-vael-beyond-citadel',
+				description: "Narrative expansion giving Lia'Vael a second chance beyond the Citadel.",
+				htmlUrl: 'https://github.com/commander-spaceman/lia-vael-beyond-citadel',
+				language: 'Python',
+				badge: 'archived',
+			},
+		],
+	},
+];
+---
+
+<Layout title="Projects | Juan Galeano" description="Juan Galeano's personal projects.">
+	<section class="flex flex-col gap-8">
+		<h1 class="mb-8 text-2xl font-bold">Projects</h1>
+
+		<div class="flex flex-col gap-8">
+			{
+				sections.map((section) => (
+					<section>
+						<h2 class="mb-4 text-sm font-semibold tracking-wider text-ef-fg opacity-50 uppercase">
+							{section.title}
+						</h2>
+						<div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2">
+							{section.projects.map((project) => <RepoCard {...project} />)}
+						</div>
+					</section>
+				))
+			}
+		</div>
+	</section>
+</Layout>
