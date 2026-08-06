@@ -20,7 +20,7 @@ const linkLabel = Astro.currentLocale === 'en' ? 'Explore' : 'Explorar';
 			<h3 class="text-sm font-bold text-ef-fg">{name}</h3>
 			{badge && <span class="shrink-0 rounded-full bg-ef-bg-dim px-2 py-0.5 text-[10px] font-medium tracking-wider text-ef-muted uppercase">{badge}</span>}
 		</div>
-		<p class="line-clamp-2 text-xs text-ef-fg opacity-60">{description}</p>
+		<p class="line-clamp-2 text-sm text-ef-muted">{description}</p>
 		<div class="flex flex-wrap gap-1.5">
 			{language && <span class="rounded-full border border-ef-border px-2 py-0.5 text-[10px] text-ef-fg opacity-50">{language}</span>}
 			{stars > 0 && <span class="rounded-full border border-ef-border px-2 py-0.5 text-[10px] text-ef-fg opacity-50">&starf; {stars}</span>}

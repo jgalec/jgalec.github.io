@@ -14,7 +14,7 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 	data-active={isActive ? 'true' : undefined}
 	class:list={[
 		className,
-		'inline-flex min-h-10 items-center text-sm font-medium text-ef-muted no-underline transition-colors hover:text-ef-green sm:min-h-0 data-[active=true]:font-bold data-[active=true]:text-ef-fg',
+		'inline-flex min-h-11 items-center text-sm font-medium text-ef-muted no-underline transition-colors hover:text-ef-green sm:min-h-0 data-[active=true]:font-bold data-[active=true]:text-ef-fg',
 	]}
 	{...props}
 >
