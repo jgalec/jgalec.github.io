@@ -1,62 +1,67 @@
-# Portafolio
+# Portfolio
 
-Mi súper ultra mega cool sitio personal.
+My super ultra mega cool personal website.
 
-## Stack
+## Tech Stack
 
 - [Astro 7](https://astro.build/)
 - [Tailwind CSS 4](https://tailwindcss.com/)
 - TypeScript
-- Markdown y colecciones de contenido de Astro
-- GitHub Pages y GitHub Actions
+- Markdown and Astro content collections
+- GitHub Pages and GitHub Actions
 
-## Rutas
+## Routes
 
-| Ruta | Contenido |
+| Route | Content |
 | --- | --- |
-| `/` | Presentación y accesos principales. |
-| `/proyectos` | Proyectos personales y experimentales. |
-| `/experiencia` | Trayectoria profesional y soluciones desarrolladas. |
-| `/experiencia/[...slug]` | Detalle de cada caso de estudio. |
-| `/contacto` | Canales de contacto, GitHub y LinkedIn. |
+| `/` | Introduction and primary links. |
+| `/proyectos` | Personal and experimental projects. |
+| `/experiencia` | Professional experience and delivered solutions. |
+| `/experiencia/[...slug]` | Individual case study details. |
+| `/contacto` | Contact options, GitHub, and LinkedIn. |
+| `/en/` | English introduction and primary links. |
+| `/en/projects` | English personal and experimental projects. |
+| `/en/experience` | English professional experience and delivered solutions. |
+| `/en/experience/[...slug]` | English individual case study details. |
+| `/en/contact` | English contact options, GitHub, and LinkedIn. |
 
-## Estructura
+## Structure
 
 ```text
 src/
-├── components/       # Componentes compartidos
-├── content/casos/    # Casos de estudio en Markdown
-├── layouts/          # Estructura global del sitio
-├── pages/            # Rutas de Astro
-├── styles/           # Tokens Everforest y estilos globales
-└── content.config.ts # Esquema de la colección de casos
-public/               # Favicons y recursos estáticos
+├── components/       # Shared components
+├── content/casos/    # Markdown case studies
+├── layouts/          # Global site structure
+├── pages/            # Astro routes
+├── styles/           # Everforest tokens and global styles
+└── content.config.ts # Case study collection schema
+public/               # Favicons and static assets
 ```
 
-Cada archivo Markdown en `src/content/casos/` incluye el título, descripción, rol, sector y tecnologías del caso. Los nombres de clientes y sus datos identificables se omiten por confidencialidad.
+Each Markdown file in `src/content/casos/` includes the case study title, description, role, sector, and technologies. Client names and identifying data are omitted for confidentiality.
 
-## Desarrollo local
+## Local Development
 
-Requiere Node.js `>=22.12.0` y pnpm.
+Requires Node.js `>=22.12.0` and pnpm.
 
 ```sh
 pnpm install
 pnpm dev
 ```
 
-El sitio estará disponible en `http://localhost:4321`.
+The site will be available at `http://localhost:4321`.
 
-## Comandos
+## Commands
 
-| Comando | Descripción |
+| Command | Description |
 | --- | --- |
-| `pnpm dev` | Inicia el servidor de desarrollo. |
-| `pnpm build` | Genera la versión estática en `dist/`. |
-| `pnpm preview` | Sirve localmente la versión compilada. |
-| `pnpm astro ...` | Ejecuta comandos de la CLI de Astro. |
+| `pnpm dev` | Starts the development server. |
+| `pnpm build` | Generates the static site in `dist/`. |
+| `pnpm preview` | Serves the compiled site locally. |
+| `pnpm astro ...` | Runs Astro CLI commands. |
 
-## Despliegue
+## Deployment
 
-El workflow [Deploy site to GitHub Pages](.github/workflows/deploy-pages.yml) compila y publica el sitio automáticamente al recibir cambios en la rama `main`.
+The [Deploy site to GitHub Pages](.github/workflows/deploy-pages.yml) workflow builds and publishes the site automatically when changes are pushed to the `main` branch.
 
-Antes de configurar un dominio personalizado, actualiza la propiedad `site` en `astro.config.mjs` para generar URLs canónicas y sitemap correctos.
+Before configuring a custom domain, update the `site` property in `astro.config.mjs` to generate correct canonical URLs and sitemap entries.
