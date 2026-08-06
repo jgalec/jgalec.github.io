@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { name, description, htmlUrl, language, stars = 0, badge } = Astro.props;
+const linkLabel = Astro.currentLocale === 'en' ? 'Explore' : 'Explorar';
 ---
 
 <a href={htmlUrl} target="_blank" rel="noopener noreferrer" class="group block overflow-hidden rounded-lg border border-ef-border bg-ef-bg-card no-underline shadow-sm">
@@ -24,6 +25,6 @@ const { name, description, htmlUrl, language, stars = 0, badge } = Astro.props;
 			{language && <span class="rounded-full border border-ef-border px-2 py-0.5 text-[10px] text-ef-fg opacity-50">{language}</span>}
 			{stars > 0 && <span class="rounded-full border border-ef-border px-2 py-0.5 text-[10px] text-ef-fg opacity-50">&starf; {stars}</span>}
 		</div>
-		<ArrowLink label="Explorar" />
+		<ArrowLink label={linkLabel} />
 	</div>
 </a>
